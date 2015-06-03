@@ -1,0 +1,19 @@
+#!/bin/bash
+if [ $PARAM_step = "vds.order.pricelist" ]
+	then
+		cat
+ 	else
+		cat | xmlstarlet ed -s "/doc" -t elem -n "flist" -v "" \
+		-i "/doc/flist[1]" -t attr -n "name" -v "list" \
+		-s "/doc/flist[1]" -t elem -n "val" -v "KVM" -i "/doc/flist[1]/val[1]" -t attr -n "key" -v "1" \
+		-s "/doc/flist[1]" -t elem -n "val" -v "OpenVZ" -i "/doc/flist[1]/val[2]" -t attr -n "key" -v "2" \
+		-s "/doc/flist[1]" -t elem -n "val" -v "ISPmanager" -i "/doc/flist[1]/val[3]" -t attr -n "key" -v "3" \
+		-s "/doc/flist[1]" -t elem -n "val" -v "Debian" -i "/doc/flist[1]/val[4]" -t attr -n "key" -v "4" \
+		-s "/doc/list[@name='tariflist']/elem[1]" -t elem -n "filter" -v "" \
+		-s "/doc/list[@name='tariflist']/elem[1]/filter" -t elem -n "tag" -v "1" \
+		-s "/doc/list[@name='tariflist']/elem[2]" -t elem -n "filter" -v "" \
+		-s "/doc/list[@name='tariflist']/elem[2]/filter" -t elem -n "tag" -v "2" \
+		-s "/doc/list[@name='tariflist']/elem[3]" -t elem -n "filter" -v "" \
+		-s "/doc/list[@name='tariflist']/elem[3]/filter" -t elem -n "tag" -v "3" \
+		-s "/doc/list[@name='tariflist']/elem[3]/filter" -t elem -n "tag" -v "4"
+	fi

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mgrdata>
+	<handler name="listfilter" type="xml">
+		<event name="vds.order.pricelist" after="yes"/>
+	</handler>
+	<metadata name="vds.order.pricelist" type="form">
+		<form>
+			<field name="tariflist">
+				<listfilter name="list" src_list="tariflist" src_field="filter"/>
+			</field>
+		</form>
+	</metadata>
+	<lang name="ru">
+		<messages name="vds.order.pricelist">
+			<msg name="list">Фильтр</msg>
+		</messages>
+	</lang>
+</mgrdata>

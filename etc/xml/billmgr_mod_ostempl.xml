@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mgrdata>
+	<handler name="ostemplate" type="xml">
+		<event name="vds.order.param" after="yes"/>
+	</handler>
+</mgrdata>

@@ -1,0 +1,12 @@
+#!/bin/bash
+if [ $PARAM_step = "vds.order.param" ]
+	then
+		cat
+ 	else
+		cat | xmlstarlet ed -s "/doc[not(slist[@name='ostempl'])]" -t elem -n "slist" -v "" \
+		-i "/doc/slist[not(@name)]" -t attr -n "name" -v "ostempl" \
+		-s "/doc/slist[@name='ostempl']" -t elem -n "val" -v "Centos-6-amd64-ispmgr5" -i "/doc/slist[@name='ostempl']/val[1]" -t attr -n "key" -v "1" \
+		-s "/doc/slist[@name='ostempl']" -t elem -n "val" -v "Centos-7-x86_64" -i "/doc/slist[@name='ostempl']/val[2]" -t attr -n "key" -v "2" \
+		-s "/doc/slist[@name='ostempl']" -t elem -n "val" -v "Debian-7-amd64-ispmgr5" -i "/doc/slist[@name='ostempl']/val[3]" -t attr -n "key" -v "3" \
+		-s "/doc/slist[@name='ostempl']" -t elem -n "val" -v "Ubuntu-14.04-amd64" -i "/doc/slist[@name='ostempl']/val[4]" -t attr -n "key" -v "4"
+	fi
