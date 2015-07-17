@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mgrdata>
+	<handler name="notifybanner" type="xml">
+		<event name="notify" after="yes"/>
+	</handler>
+</mgrdata>

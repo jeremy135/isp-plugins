@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#cat | xmlstarlet ed -s "/doc/notify" -t elem -n "item" -v ""
+cat | xmlstarlet ed -s "/doc/notify" -t elem -n "item" -v "" \
+-i "/doc/notify/item[not(@name)]" -t attr -n "name" -v "bannerlist" \
+-i "/doc/notify/item[@name='bannerlist']" -t attr -n "type" -v "bannerlist" \
+-i "/doc/notify/item[@name='bannerlist']" -t attr -n "img" -v "p-newmsg" \
+-s "/doc/notify/item[@name='bannerlist']" -t elem -n "bitem" -v "" \
+-i "/doc/notify/item/bitem[not(@id)]" -t attr -n "id" -v "n1" \
+-s "/doc/notify/item/bitem[@id='n1']" -t elem -n "msg" -v "Hello this is the firstbanner!!!" \
+-s "/doc/notify/item[@name='bannerlist']" -t elem -n "bitem" -v "" \
+-i "/doc/notify/item/bitem[not(@id)]" -t attr -n "id" -v "n2" \
+-s "/doc/notify/item/bitem[@id='n2']" -t elem -n "msg" -v "Hello this is the NEW firstbanner!!!" \
+-i "/doc/notify/item/bitem[@id='n2']" -t attr -n "new" -v "yes" \
+-s "/doc/notify/item[@name='bannerlist']" -t elem -n "msg" -v "2"
+
